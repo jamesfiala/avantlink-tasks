@@ -1,0 +1,50 @@
+.al-header {
+	height: 50px;
+	overflow: hidden;
+	color: white;
+	background-color: $dark-blue;
+
+	.al-header-title {
+		float: left;
+		padding: 10px 0;
+		font-size: 24px;
+		text-rendering: auto;
+		transform: translate(0, 0);
+
+		&:before {
+			padding-right: 5px;
+			line-height: 20px;
+		}
+	}
+
+	.al-header-link {
+		display: block;
+		float: right;
+		padding: 8px 0;
+	}
+
+	.al-link-button-wrapper {
+		width: 110px;
+		float: right;
+		.al-link-button {
+			width: 85px;
+			padding: 15px 5px 18px 5px;
+			a {
+				color: white;
+				text-align: center;
+				text-decoration: none;
+
+				font-size: 16px;
+			}
+
+			//hide to prevent overlap
+			@include al-screen-small {
+				display: none;
+			}
+		}
+	}
+
+	.al-link-button:hover {
+		background-color: $dark-blue-tint;
+	}
+}

@@ -1,0 +1,28 @@
+$max-supported-width: 960px;
+
+$dark-blue: #003366;
+$dark-blue-tint: #0059b3;
+
+body {
+	margin: 0;//TODO: this is getting set to 8px somewhere- track it down so you can remove this later
+}
+
+.al-row {
+	margin: 0 auto;
+	width: 100%;
+	max-width: $max-supported-width;
+}
+
+.al-column {
+	position: relative;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
+}
+
+//media query mixins
+@mixin al-screen-small {
+	@media (max-width: 320px) {
+		@content;
+	}
+}
