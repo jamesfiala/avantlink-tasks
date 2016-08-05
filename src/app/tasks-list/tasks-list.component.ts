@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ITask } from './task';
+import { IndividualTask } from './individual-task.component'
 
 @Component({
   moduleId: module.id,
+  directives: [
+	  IndividualTask
+  ],
   selector: 'tasks-list',
   templateUrl: 'tasks-list.component.html',
 })

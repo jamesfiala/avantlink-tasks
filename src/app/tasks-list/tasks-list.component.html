@@ -1,5 +1,6 @@
 <div class="al-tasks-list">
-	<div  *ngFor="let task of tasks">
-		{{task.name}}
-	</div>
+	<individual-task
+			*ngFor="let task of tasks"
+			[task]="task">
+	</individual-task>
 </div>
