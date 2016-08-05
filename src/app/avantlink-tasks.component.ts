@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
 import { HeaderComponent } from './header';
+import { TasksListComponent } from './tasks-list';
 
 @Component({
   directives: [
-	  HeaderComponent
+	  HeaderComponent,
+	  TasksListComponent
   ],
   moduleId: module.id,
   selector: 'avantlink-tasks-app',
@@ -13,5 +15,7 @@ import { HeaderComponent } from './header';
 
 
 export class AvantlinkTasksAppComponent {
-  title = 'avantlink-tasks works!';
+
+	public static get APPLICATION_ID(): string { return "72ea962f-5ac0-11e6-9168-0a5449992ecf"; }
+	title = 'avantlink-tasks works!';
 }
