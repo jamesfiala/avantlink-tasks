@@ -5,7 +5,8 @@ import { TasksListComponent } from './tasks-list';
 
 
 const routes: RouterConfig = [
-	{path: '', component: TasksListComponent}
+	{path: '', component: TasksListComponent},
+	{path: 'list', component: TasksListComponent}
 ];
 
 

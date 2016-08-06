@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-header',
+  selector: 'al-app-header',
   templateUrl: 'header.component.html',
 })
 

@@ -16,7 +16,11 @@ export class TasksService {
 		this.tasks = [{name: "task 1 from service", id: 1}, {name: "task 12", id: 2}, {name: "task 3", id: 3}];
 	}
 
-	public addTask(task: ITask): Observable<ITask> {
+	public addTask(name: string): Observable<ITask> {
+		let task: ITask = {
+			name: name,
+			id: this.tasks.length + 1 //not perfect but will work with dummy data
+		};
 		this.tasks.push(task);
 		return null;
 	}

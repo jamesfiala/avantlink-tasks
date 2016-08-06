@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
 import { HeaderComponent } from './header';
-import { TasksListComponent } from './tasks-list';
+import { TasksListComponent, TaskInput } from './tasks-list';
 
 @Component({
   directives: [
 	  HeaderComponent,
-	  TasksListComponent
+	  TasksListComponent,
+	  TaskInput
   ],
   moduleId: module.id,
   selector: 'avantlink-tasks-app',

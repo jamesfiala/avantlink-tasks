@@ -5,7 +5,7 @@ import { TasksService } from '../services/tasks-service';
 
 @Component({
 	moduleId: module.id,
-	selector: 'individual-task',
+	selector: 'al-individual-task',
 	templateUrl: './individual-task.component.html'
 })
 

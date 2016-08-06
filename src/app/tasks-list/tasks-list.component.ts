@@ -8,7 +8,7 @@ import { TasksService } from "../services/tasks-service";
   directives: [
 	  IndividualTask
   ],
-  selector: 'tasks-list',
+  selector: 'al-tasks-list',
   templateUrl: 'tasks-list.component.html',
 })
 
