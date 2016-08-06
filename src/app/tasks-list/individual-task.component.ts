@@ -1,22 +1,16 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Output, OnInit } from '@angular/core';
 import { ITask } from './task';
-//import { Autofocus } from 'src/views/common';
 
 
 @Component({
 	moduleId: module.id,
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	//directives: [
-	//	Autofocus
-	//],
 	selector: 'individual-task',
 	templateUrl: './individual-task.component.html'
 })
 
 export class IndividualTask {
 	@Input() task: ITask;
-	//@Output() remove: EventEmitter<any> = new EventEmitter(false);
-	//@Output() update: EventEmitter<any> = new EventEmitter(false);
 	constructor() {}
 
 	ngOnInit() {
@@ -24,30 +18,30 @@ export class IndividualTask {
 	}
 
 	editing: boolean = false;
-	name: string = '';
+	editingName: string = '';
 
-	editname(): void {
+	editName(element: HTMLElement): void {
 		this.editing = true;
-		this.name = this.task.name;
+		this.editingName = this.task.name;
+		//have to wait until the element is unhidden before it can receive focus.
+		//This is a little bit hacky
+		setTimeout(():void => {
+			element.focus();
+		}, 0);
 	}
 
-	saveTitle(): void {
-		/*if (this.editing) {
-			const title: string = this.title.trim();
-			if (title.length && title !== this.task.title) {
-				this.update.emit({title});
+	saveName(): void {
+		  if (this.editing) {
+			let newName: string = this.editingName.trim();
+			if (newName.length > 0 && newName !== this.task.name) {
+				//TODO: call backend here
+				this.task.name = newName;
 			}
 			this.stopEditing();
-		} */
+		}
 	}
 
 	stopEditing(): void {
 		this.editing = false;
-	}
-
-	toggleStatus(): void {
-	/*	this.update.emit({
-			completed: !this.task.completed
-		});*/
 	}
 }

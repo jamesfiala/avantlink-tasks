@@ -1,64 +1,58 @@
 <div
-		[ngClass]="{'task-item--completed': task.completed, 'task-item--editing': editing}"
-		class="task-item"
+		[ngClass]="{'al-task-done': task.completed, 'al-task-edit': editing}"
+		class="al-task-item"
 		tabindex="0">
 
-	<div class="cell">
+	<div class="al-task-cell">
 		<button
 				*ngIf="!editing"
 				(click)="toggleStatus()"
-				aria-label="Mark task as completed"
-				class="task-item__button"
-				type="button">
-			<span class="icon material-icons" [ngClass]="{'icon--active': task.completed}">done</span>
+				aria-label="Mark complete"
+				title="Mark complete"
+				class="al-task-button"
+			type="button">
+			<i class="fa fa-check" aria-hidden="true"></i>
 		</button>
 	</div>
 
-	<div class="cell">
+	<div class="al-task-cell">
 		<div
 				*ngIf="!editing"
-				class="task-item__title"
+				class="al-task-name"
+				title="Task Name"
 				tabindex="0">
 			{{ task.name }}
 		</div>
 
-		<form class="task-form" *ngIf="editing" (ngSubmit)="saveTitle()" novalidate>
-			<input
-					[(ngModel)]="title"
+		<form class="al-task-form" [hidden]="!editing" (ngSubmit)="saveName()" novalidate>
+			<input #editFocus
+					[(ngModel)]="editingName"
 					(blur)="stopEditing()"
 					(keyup.escape)="stopEditing()"
-					autocomplete="off"
-					autofocus
-					class="task-item__input"
-					name="title"
-					type="text">
+					class="al-task-editor"
+					title="Update your task"
+					name="editingName"
+					type="text" />
 		</form>
 	</div>
 
-	<div class="cell">
+	<div class="al-task-cell">
 		<button
 				*ngIf="editing"
 				(click)="stopEditing()"
 				aria-label="Cancel editing"
-				class="task-item__button"
+				class="al-task-button"
 				type="button">
-			<span class="icon material-icons">&#xe14c;</span>
+			<i class="fa fa-times"></i>
 		</button>
 		<button
-				*ngIf="!editing"
-				(click)="editTitle()"
-				aria-label="Edit task title"
-				class="task-item__button"
+				[hidden]="editing"
+				(click)="editName(editFocus)"
+				aria-label="Edit task"
+				title="Edit task"
+				class="al-task-button"
 				type="button">
-			<span class="icon material-icons">edit</span>
-		</button>
-		<button
-				*ngIf="!editing"
-				(click)="remove.emit()"
-				aria-label="Delete task"
-				class="task-item__button"
-				type="button">
-			<span class="icon material-icons">delete</span>
+			<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 		</button>
 	</div>
 </div>

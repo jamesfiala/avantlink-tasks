@@ -11,7 +11,7 @@ import { IndividualTask } from './individual-task.component'
   templateUrl: 'tasks-list.component.html',
 })
 export class TasksListComponent implements OnInit {
-	tasks: ITask[]	= [{name: "task 1", id: "1"}, {name: "task 12", id: "2"}, {name: "task 3", id: "3"}];
+	tasks: ITask[]	= [{name: "task 1", id: 1}, {name: "task 12", id: 2}, {name: "task 3", id: 3}];
   constructor() {}
 
   ngOnInit() {

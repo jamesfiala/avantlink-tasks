@@ -1,7 +1,8 @@
-$max-supported-width: 960px;
+$max-width: 960px;
 
 $dark-blue: #003366;
-$dark-blue-tint: #0059b3;
+$dark-blue-tint: #0059B3;
+$light-green: #2ECC40;
 
 body {
 	margin: 0;//TODO: this is getting set to 8px somewhere- track it down so you can remove this later
@@ -10,7 +11,7 @@ body {
 .al-row {
 	margin: 0 auto;
 	width: 100%;
-	max-width: $max-supported-width;
+	max-width: $max-width;
 }
 
 .al-column {
@@ -25,4 +26,10 @@ body {
 	@media (max-width: 320px) {
 		@content;
 	}
+}
+
+//IE specific stuff
+
+::-ms-clear { //IE adds an X to the end of text boxes that clears the text. This hides that
+	display: none;
 }

@@ -1,6 +1,6 @@
 export interface ITask {
 	name: string;
-	id: string;
+	id: number;
 }
 
 export class Task implements ITask {
