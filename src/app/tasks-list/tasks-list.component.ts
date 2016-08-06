@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { ITask } from './task';
 import { IndividualTask } from './individual-task.component'
+import { TasksService } from "../services/tasks-service";
 
 @Component({
   moduleId: module.id,
@@ -10,11 +11,14 @@ import { IndividualTask } from './individual-task.component'
   selector: 'tasks-list',
   templateUrl: 'tasks-list.component.html',
 })
+
+@Injectable()
 export class TasksListComponent implements OnInit {
-	tasks: ITask[]	= [{name: "task 1", id: 1}, {name: "task 12", id: 2}, {name: "task 3", id: 3}];
-  constructor() {}
+	tasks: ITask[];
+	constructor(private tasksService: TasksService) {
+	}
 
-  ngOnInit() {
-  }
-
+	ngOnInit() {
+		this.tasks = this.tasksService.tasks;
+	}
 }

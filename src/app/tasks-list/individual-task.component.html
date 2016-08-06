@@ -6,7 +6,7 @@
 	<div class="al-task-cell">
 		<button
 				*ngIf="!editing"
-				(click)="toggleStatus()"
+				(click)="markComplete()"
 				aria-label="Mark complete"
 				title="Mark complete"
 				class="al-task-button"
@@ -26,13 +26,13 @@
 
 		<form class="al-task-form" [hidden]="!editing" (ngSubmit)="saveName()" novalidate>
 			<input #editFocus
-					[(ngModel)]="editingName"
-					(blur)="stopEditing()"
-					(keyup.escape)="stopEditing()"
-					class="al-task-editor"
-					title="Update your task"
-					name="editingName"
-					type="text" />
+				   class="al-task-editor"
+				   [(ngModel)]="editingName"
+				   (blur)="stopEditing()"
+				   title="Update your task"
+				   name="editingName"
+				   type="text"
+				   autocomplete="off" />
 		</form>
 	</div>
 
