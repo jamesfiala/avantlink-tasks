@@ -111,19 +111,19 @@ body {
       .al-task-form-container .al-task-form .al-task-input ::-webkit-input-placeholder {
         /* WebKit, Blink, Edge */
         color: white;
-        opacity: .7; }
+        opacity: .75; }
       .al-task-form-container .al-task-form .al-task-input :-moz-placeholder {
         /* Mozilla Firefox 4 to 18 */
         color: white;
-        opacity: .7; }
+        opacity: .75; }
       .al-task-form-container .al-task-form .al-task-input ::-moz-placeholder {
         /* Mozilla Firefox 19+ */
         color: white;
-        opacity: .7; }
+        opacity: .75; }
       .al-task-form-container .al-task-form .al-task-input :-ms-input-placeholder {
         /* Internet Explorer 10-11 */
         color: white;
-        opacity: .7; }
+        opacity: .75; }
 
 .al-tasks-list {
   max-width: 960px;
