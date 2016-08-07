@@ -22,11 +22,12 @@ var barrels = [
     'rxjs',
     // App specific barrels.
     'app',
-    'app/header'
+    'app/header',
+	'app/services'
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {
-    cliSystemConfigPackages[barrelName] = { main: 'index' };
+    cliSystemConfigPackages[barrelName] = { main: 'index.js' };
 });
 // Apply the CLI SystemJS configuration.
 System.config({
