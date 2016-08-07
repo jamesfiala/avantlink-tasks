@@ -1,9 +1,9 @@
 "use strict";
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var tasks_list_component_1 = require('./tasks-list/tasks-list.component');
-var task_input_component_1 = require('./tasks-list/task-input.component');
-var tasks_container_component_1 = require('./tasks-list/tasks-container.component');
+var tasks_list_component_1 = require('./tasks-list/tasks-list.component.js');
+var task_input_component_1 = require('./tasks-list/task-input.component.js');
+var tasks_container_component_1 = require('./tasks-list/tasks-container.component.js');
 var routes = [
     { path: '', redirectTo: '/tasks' },
     { path: '**', redirectTo: '/tasks' },

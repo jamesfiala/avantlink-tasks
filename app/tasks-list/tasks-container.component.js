@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var task_input_component_1 = require('./task-input.component');
-var tasks_list_component_1 = require('./tasks-list.component');
+var task_input_component_1 = require('./task-input.component.js');
+var tasks_list_component_1 = require('./tasks-list.component.js');
 var TasksContainer = (function () {
     function TasksContainer() {
     }
