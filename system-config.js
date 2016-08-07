@@ -25,7 +25,6 @@ var barrels = [
     'app/shared',
     'app/header/app-header',
     'app/header',
-    'app/services',
     'app/tasks-list',
 ];
 var cliSystemConfigPackages = {};
