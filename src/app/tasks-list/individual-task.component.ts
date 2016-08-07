@@ -31,6 +31,12 @@ export class IndividualTask {
 		  if (this.editing) {
 			let newName: string = this.editingName.trim();
 			if (newName.length > 0 && newName !== this.task.name) {
+				/*Update the task name here so it looks seamless to the user
+				 If there is a server error when it tries to update, the
+				 tasksService will still push out the old tasks list
+				 and the change will be reverted then. */
+				this.task.name = newName;
+
 				this.tasksService.updateTask(newName, this.task.id);
 			}
 			this.stopEditing();

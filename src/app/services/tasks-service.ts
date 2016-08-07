@@ -30,7 +30,7 @@ export class TasksService {
 	}
 
 	public updateTask(newName: string, id: number): void {
-		this.http.put(TasksService.TASKS_API_URL+'?id='+id, { headers: this.getDefaultHeader() })
+		this.http.put(TasksService.TASKS_API_URL+'?id='+id, { 'name': newName }, { headers: this.getDefaultHeader() })
 			.subscribe(this.updateTaskSuccess.bind(this), this.taskHttpError.bind(this), this.updateObservables.bind(this));
 	}
 
