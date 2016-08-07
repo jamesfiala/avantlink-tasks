@@ -22,8 +22,6 @@ var barrels = [
     'rxjs',
     // App specific barrels.
     'app',
-    'app/shared',
-    'app/header/app-header',
     'app/header',
     'app/tasks-list',
 ];
