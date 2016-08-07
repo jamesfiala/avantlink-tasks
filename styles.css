@@ -12,6 +12,124 @@ body {
   padding-right: 15px;
   width: 100%; }
 
+::-ms-clear {
+  display: none; }
+
+.al-task-item {
+  display: flex;
+  outline: none;
+  border-bottom: 1px solid #003366;
+  height: 30px;
+  font-size: 16px;
+  overflow: hidden; }
+
+.al-task-edit {
+  border-bottom: 1px solid #0059B3; }
+
+.al-task-cell:first-child, .al-task-cell:last-child {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center; }
+.al-task-cell:first-child {
+  padding-right: 20px; }
+.al-task-cell:nth-child(2) {
+  flex: 1;
+  padding-right: 30px;
+  overflow: hidden; }
+
+.al-task-button {
+  margin-left: 5px;
+  border: 0;
+  border-radius: 100px;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px; }
+  .al-task-button .fa {
+    color: #003366; }
+  .al-task-button .fa.fa-check {
+    color: #2ECC40; }
+  .al-task-button .fa.fa-save {
+    color: #003366; }
+  .al-task-button .fa.fa-times {
+    color: red; }
+
+.al-task-name {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  line-height: 30px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.al-task-editor {
+  border: 1px solid #003366;
+  border-radius: 4px;
+  margin-top: 2px;
+  margin-left: 25px;
+  padding-left: 4px;
+  height: 22px;
+  width: 99%;
+  font: inherit; }
+
+.al-task-form-container {
+  background-color: #0059B3; }
+  .al-task-form-container .al-task-form {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    max-width: 960px;
+    margin: auto; }
+    .al-task-form-container .al-task-form .al-task-input {
+      width: 100%;
+      max-width: 930px;
+      padding-left: 10px;
+      display: inline-block; }
+      .al-task-form-container .al-task-form .al-task-input input {
+        outline: none;
+        border: 2px solid white;
+        color: white;
+        padding-left: 8px;
+        border-radius: 4px;
+        width: calc(100% - 41px);
+        height: 40px;
+        font-family: inherit;
+        font-size: 24px;
+        font-weight: 300;
+        background: transparent; }
+      .al-task-form-container .al-task-form .al-task-input .fa-plus {
+        color: white;
+        font-size: 24px;
+        margin-left: 5px;
+        cursor: pointer; }
+      .al-task-form-container .al-task-form .al-task-input .fa-plus:hover {
+        color: lightgray; }
+      .al-task-form-container .al-task-form .al-task-input ::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: white;
+        opacity: .7; }
+      .al-task-form-container .al-task-form .al-task-input :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: white;
+        opacity: .7; }
+      .al-task-form-container .al-task-form .al-task-input ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: white;
+        opacity: .7; }
+      .al-task-form-container .al-task-form .al-task-input :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: white;
+        opacity: .7; }
+
+.al-tasks-list {
+  max-width: 960px;
+  margin: auto;
+  margin-top: 15px; }
+
 .al-header {
   height: 50px;
   overflow: hidden;
@@ -45,6 +163,6 @@ body {
         .al-header .al-link-button-wrapper .al-link-button {
           display: none; } }
   .al-header .al-link-button:hover {
-    background-color: #0059b3; }
+    background-color: #0059B3; }
 
 /*# sourceMappingURL=styles.css.map */

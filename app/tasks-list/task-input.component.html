@@ -1,0 +1,16 @@
+<div class="al-task-form-container">
+	<form class="al-task-form" (ngSubmit)="addTask()" novalidate>
+		<div class="al-task-input">
+			<input
+					[(ngModel)]="taskName"
+					autocomplete="off"
+					name="taskName"
+					title="Enter your new task here"
+					placeholder="Enter Task"
+					type="text">
+			<i class="fa fa-plus"
+			   (click)="addTask()"
+				title="Add task to list"></i>
+		</div>
+	</form>
+</div>

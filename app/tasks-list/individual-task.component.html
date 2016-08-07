@@ -1,0 +1,65 @@
+<div
+		[ngClass]="{'al-task-edit': editing}"
+		class="al-task-item"
+		tabindex="0">
+
+	<div class="al-task-cell">
+		<button
+				*ngIf="!editing"
+				(click)="deleteTask()"
+				aria-label="Remove Task"
+				title="Remove Task"
+				class="al-task-button"
+			type="button">
+			<i class="fa fa-trash-o" aria-hidden="true"></i>
+		</button>
+	</div>
+
+	<div class="al-task-cell">
+		<div
+				*ngIf="!editing"
+				class="al-task-name"
+				title="Task Name"
+				tabindex="0">
+			{{ task.name }}
+		</div>
+
+		<form class="al-task-form" [hidden]="!editing" (ngSubmit)="saveName()" novalidate>
+			<input #editFocus
+				   class="al-task-editor"
+				   [(ngModel)]="editingName"
+				   title="Update your task"
+				   name="editingName"
+				   type="text"
+				   autocomplete="off" />
+		</form>
+	</div>
+
+	<div class="al-task-cell">
+		<button
+				*ngIf="editing"
+				(click)="saveName()"
+				aria-label="Save Changes"
+				class="al-task-button"
+				type="button">
+			<i class="fa fa-check" (click)="saveName()"></i>
+		</button>
+		<button
+				*ngIf="editing"
+				(click)="stopEditing()"
+				aria-label="Cancel editing"
+				class="al-task-button"
+				type="button">
+			<i class="fa fa-times"></i>
+		</button>
+		<button
+				[hidden]="editing"
+				(click)="editName(editFocus)"
+				aria-label="Edit task"
+				title="Edit task"
+				class="al-task-button"
+				type="button">
+			<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+		</button>
+	</div>
+</div>
