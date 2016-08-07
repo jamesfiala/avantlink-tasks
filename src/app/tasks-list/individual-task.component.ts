@@ -1,6 +1,6 @@
 import { Component, Input, Injectable } from '@angular/core';
 import { ITask } from './task';
-import { TasksService } from '../services/tasks-service';
+import { TasksService } from './tasks-service';
 
 
 @Component({

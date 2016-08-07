@@ -1,7 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { ITask } from './task';
 import { IndividualTask } from './individual-task.component'
-import { TasksService } from "../services/tasks-service";
+import { TasksService } from "./tasks-service";
 
 @Component({
   moduleId: module.id,
