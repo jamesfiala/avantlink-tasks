@@ -32,9 +32,9 @@ barrels.forEach(function (barrelName) {
 // Apply the CLI SystemJS configuration.
 System.config({
     map: {
-        '@angular': 'vendor/@angular',
-        'rxjs': 'vendor/rxjs',
-        'main': 'main.js'
+        '@angular': 'avantlink-tasks/vendor/@angular',
+        'rxjs': 'avantlink-tasks/vendor/rxjs',
+        'main': 'avantlink-tasks/main.js'
     },
     packages: cliSystemConfigPackages
 });
