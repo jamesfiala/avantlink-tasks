@@ -1,5 +1,5 @@
 "use strict";
-var environment_1 = require('./environment');
+var environment_1 = require('./environment.js');
 exports.environment = environment_1.environment;
 var avantlink_tasks_component_1 = require('./avantlink-tasks.component');
 exports.AvantlinkTasksAppComponent = avantlink_tasks_component_1.AvantlinkTasksAppComponent;
