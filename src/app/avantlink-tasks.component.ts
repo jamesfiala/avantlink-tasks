@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Header } from './header';
-import { TasksContainer } from './tasks-list';
+import { Header } from './header/header.component';
+import { TasksContainer } from './tasks-list/tasks-container.component';
 
 @Component({
   directives: [

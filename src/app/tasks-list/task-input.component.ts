@@ -1,5 +1,5 @@
 import { Injectable, Component } from '@angular/core';
-import { TasksService } from "./tasks-service";
+import { TasksService } from "../services/tasks-service";
 
 
 @Component({
