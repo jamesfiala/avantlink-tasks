@@ -101,6 +101,9 @@ body {
         font-size: 24px;
         font-weight: 300;
         background: transparent; }
+        @media (max-width: 950px) {
+          .al-task-form-container .al-task-form .al-task-input input {
+            width: calc(100% - 60px); } }
       .al-task-form-container .al-task-form .al-task-input .fa-plus {
         color: white;
         font-size: 24px;
