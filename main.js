@@ -1,8 +1,8 @@
 "use strict";
 var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
 var core_1 = require('@angular/core');
-var index_1 = require('./app/index');
-var index_2 = require('./app/services/index');
+var index_1 = require('./app/index.js');
+var index_2 = require('./app/services/index.js');
 var http_1 = require('@angular/http');
 if (index_1.environment.production) {
     core_1.enableProdMode();
