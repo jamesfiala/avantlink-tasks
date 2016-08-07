@@ -22,8 +22,7 @@ var barrels = [
     'rxjs',
     // App specific barrels.
     'app',
-    'app/header',
-    'app/services'
+    'app/header'
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {
