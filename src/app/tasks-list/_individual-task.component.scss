@@ -43,10 +43,18 @@ $task-height: 30px;
 	background: transparent;
 	cursor: pointer;
 	font-size: 18px;
-	.fa-check {
+	//set default color
+	.fa {
+		color: $dark-blue;
+	}
+	//color overrides
+	.fa.fa-check {
 		color: $light-green;
 	}
-	.fa-times {
+	.fa.fa-save {
+		color: $dark-blue;
+	}
+	.fa.fa-times {
 		color: red;
 	}
 }

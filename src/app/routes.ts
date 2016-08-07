@@ -1,12 +1,15 @@
 import { PLATFORM_DIRECTIVES } from '@angular/core';
 import { provideRouter, ROUTER_DIRECTIVES, RouterConfig }  from '@angular/router';
 
-import { TasksListComponent } from './tasks-list';
+import { TasksList, TasksContainer, TaskInput } from './tasks-list';
 
 
 const routes: RouterConfig = [
-	{path: '', component: TasksListComponent},
-	{path: 'list', component: TasksListComponent}
+	{path: '', redirectTo: '/tasks' },
+	{path: '**', redirectTo: '/tasks' },
+	{path: 'input', component: TaskInput },
+	{path: 'list', component: TasksList },
+	{path: 'tasks', component: TasksContainer},
 ];
 
 

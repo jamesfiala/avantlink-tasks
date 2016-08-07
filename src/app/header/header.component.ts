@@ -6,16 +6,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'header.component.html',
 })
 
-export class HeaderComponent implements OnInit {
+export class Header implements OnInit {
   githubRepo: string = null;
 
   //Syntax for constants
-  private static get GITHUB_REPO(): string { return "https://github.com/jamesfiala/avantlink-tasks"; }
+  private static get GITHUB_REPO(): string { return 'https://github.com/jamesfiala/avantlink-tasks'; }
 
   constructor() {}
 
   ngOnInit() {
-	  this.githubRepo = HeaderComponent.GITHUB_REPO;
+	  this.githubRepo = Header.GITHUB_REPO;
   }
 
 }

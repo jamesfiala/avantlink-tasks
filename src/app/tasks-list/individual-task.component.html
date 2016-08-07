@@ -1,17 +1,17 @@
 <div
-		[ngClass]="{'al-task-done': task.completed, 'al-task-edit': editing}"
+		[ngClass]="{'al-task-edit': editing}"
 		class="al-task-item"
 		tabindex="0">
 
 	<div class="al-task-cell">
 		<button
 				*ngIf="!editing"
-				(click)="markComplete()"
-				aria-label="Mark complete"
-				title="Mark complete"
+				(click)="deleteTask()"
+				aria-label="Remove Task"
+				title="Remove Task"
 				class="al-task-button"
 			type="button">
-			<i class="fa fa-check" aria-hidden="true"></i>
+			<i class="fa fa-trash-o" aria-hidden="true"></i>
 		</button>
 	</div>
 
@@ -28,7 +28,6 @@
 			<input #editFocus
 				   class="al-task-editor"
 				   [(ngModel)]="editingName"
-				   (blur)="stopEditing()"
 				   title="Update your task"
 				   name="editingName"
 				   type="text"
@@ -37,6 +36,14 @@
 	</div>
 
 	<div class="al-task-cell">
+		<button
+				*ngIf="editing"
+				(click)="saveName()"
+				aria-label="Save Changes"
+				class="al-task-button"
+				type="button">
+			<i class="fa fa-check" (click)="saveName()"></i>
+		</button>
 		<button
 				*ngIf="editing"
 				(click)="stopEditing()"

@@ -14,9 +14,4 @@ describe('App: AvantlinkTasks', () => {
       inject([AvantlinkTasksAppComponent], (app: AvantlinkTasksAppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'avantlink-tasks works!\'',
-      inject([AvantlinkTasksAppComponent], (app: AvantlinkTasksAppComponent) => {
-    expect(app.title).toEqual('avantlink-tasks works!');
-  }));
 });

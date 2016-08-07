@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 
-import { HeaderComponent } from './header';
-import { TasksListComponent, TaskInput } from './tasks-list';
+import { Header } from './header';
+import { TasksContainer } from './tasks-list';
 
 @Component({
   directives: [
-	  HeaderComponent,
-	  TasksListComponent,
-	  TaskInput
+	  Header,
+	  TasksContainer
   ],
   moduleId: module.id,
   selector: 'avantlink-tasks-app',
@@ -16,5 +15,4 @@ import { TasksListComponent, TaskInput } from './tasks-list';
 
 
 export class AvantlinkTasksAppComponent {
-	title = 'avantlink-tasks works!';
 }

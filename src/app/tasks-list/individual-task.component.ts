@@ -41,7 +41,7 @@ export class IndividualTask {
 		this.editing = false;
 	}
 
-	markComplete(): void {
+	deleteTask(): void {
 		this.tasksService.deleteTask(this.task);
 	}
 }

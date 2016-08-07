@@ -2,7 +2,8 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
 import { AvantlinkTasksAppComponent, environment, ROUTER_PROVIDERS } from './app/';
 
-import { TASKS_SERVICE_PROVIDER} from './app/services';
+import { TASKS_SERVICE_PROVIDERS } from './app/services';
+import { HTTP_PROVIDERS } from '@angular/http';
 
 
 if (environment.production) {
@@ -11,5 +12,6 @@ if (environment.production) {
 
 bootstrap(AvantlinkTasksAppComponent,[
 	ROUTER_PROVIDERS,
-	TASKS_SERVICE_PROVIDER
+	TASKS_SERVICE_PROVIDERS,
+	HTTP_PROVIDERS
 ]);

@@ -13,12 +13,13 @@ import { TasksService } from "../services/tasks-service";
 })
 
 @Injectable()
-export class TasksListComponent implements OnInit {
+export class TasksList implements OnInit {
 	tasks: ITask[];
 	constructor(private tasksService: TasksService) {
 	}
 
 	ngOnInit() {
-		this.tasks = this.tasksService.tasks;
+		this.tasksService.tasks$.subscribe(tasks => this.tasks = tasks,
+		error => console.log(error));
 	}
 }
