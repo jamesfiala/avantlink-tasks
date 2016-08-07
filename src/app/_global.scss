@@ -32,24 +32,23 @@ body {
 @mixin placeholder-color($value) {
 	::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 		color: $value;
-		opacity: .7;
+		opacity: .75;
 	}
 	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
 		color: $value;
-		opacity: .7;
+		opacity: .75;
 	}
 	::-moz-placeholder { /* Mozilla Firefox 19+ */
 		color: $value;
-		opacity: .7;
+		opacity: .75;
 	}
 	:-ms-input-placeholder { /* Internet Explorer 10-11 */
 		color: $value;
-		opacity: .7;
+		opacity: .75;
 	}
 }
 
 //IE specific stuff
-
 ::-ms-clear { //IE adds an X to the end of text boxes that clears the text. This hides that
 	display: none;
 }
