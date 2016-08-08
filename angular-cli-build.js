@@ -9,6 +9,8 @@ module.exports = function(defaults) {
       'systemjs/dist/system.src.js',
       'zone.js/dist/*.js',
       'es6-shim/es6-shim.js',
+	  'ng2-toastr/**/*.js',
+	  'ng2-toastr/ng2-toastr.css',
       'reflect-metadata/*.js',
       'rxjs/**/*.js',
       '@angular/**/*.js'

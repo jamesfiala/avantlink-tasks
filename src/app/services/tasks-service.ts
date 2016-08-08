@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { ITask, Task, ITaskResponse } from '../tasks-list/task';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject'
+import { Subject } from 'rxjs/Subject';
+import { ToastsManager } from 'ng2-toastr';
 
 @Injectable()
 export class TasksService {
 	private static get APPLICATION_ID(): string { return '72ea962f-5ac0-11e6-9168-0a5449992ecf'; }
-
 	private static get TASKS_API_URL(): string { return 'http://homework.avantlink.com/tasks' }
 
 	private _tasksSource: Subject<ITask[]> = new Subject<ITask[]>();
@@ -15,7 +15,7 @@ export class TasksService {
 
 	tasks$ = this._tasksSource.asObservable();
 
-	constructor(private http: Http) {
+	constructor(private http: Http, private toastService: ToastsManager) {
 		this._tasks = [];
 		this.loadTasks();
 	}
@@ -53,8 +53,9 @@ export class TasksService {
 		if(response && response.json().success) {
 			let task:ITaskResponse = response.json().data;
 			this._tasks.push(new Task(task.task_name, task.task_id));
+			this.toastService.success('Task added: '+task.task_name);
 		} else {
-			console.log('Request unsuccessful');
+			this.toastService.error('The task was not added due to an issue with the server');
 		}
 	}
 
@@ -63,12 +64,14 @@ export class TasksService {
 			let task:ITaskResponse = response.json().data;
 			for (let i:number = 0; i < this._tasks.length; i++) {
 				if (task.task_id == this._tasks[i].id) {
+					let temporaryTask: ITask = this._tasks[i];
 					this._tasks.splice(i, 1);
+					this.toastService.success("Task deleted: "+temporaryTask.name);
 					return;//exit loop once we found the task to be deleted
 				}
 			}
 		} else {
-			console.log('Request unsuccessful');
+			this.toastService.error('The task was not deleted due to an issue with the server');
 		}
 	}
 
@@ -81,12 +84,12 @@ export class TasksService {
 			}
 			this._tasksSource.next(this._tasks);
 		} else {
-			console.log('Request unsuccessful');
+			this.toastService.error('Error loading tasks from the server');
 		}
 	}
 
 	private taskHttpError(error: any): void {
-		console.log(error);
+		this.toastService.error('The server returned an error');
 	}
 
 	private updateTaskSuccess(response: Response): void {
@@ -95,6 +98,7 @@ export class TasksService {
 			for(let i: number = 0; i < this._tasks.length; i++) {
 				if(task.task_id == this._tasks[i].id) {
 					this._tasks[i].name = task.task_name;
+					this.toastService.success('Task updated successfully');
 					return; //exit loop once we found the task to be updated
 				}
 			}
@@ -112,6 +116,7 @@ export class TasksService {
 		return headers;
 	}
 
+	//This creates a header for posts that tells it I'm sending JSON
 	private getJsonHeader(): Headers {
 		let headers: Headers = this.getDefaultHeader();
 		headers.append('Content-Type', 'application/json');

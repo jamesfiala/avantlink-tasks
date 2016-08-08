@@ -1,5 +1,6 @@
 import { Injectable, Component } from '@angular/core';
 import { TasksService } from "../services/tasks-service";
+import { ToastsManager } from 'ng2-toastr';
 
 
 @Component({
@@ -12,13 +13,16 @@ import { TasksService } from "../services/tasks-service";
 export class TaskInput {
 	taskName: string = '';
 
-	constructor(private tasksService: TasksService) {
+	constructor(private tasksService: TasksService, private toastService: ToastsManager) {
 	}
 
 	addTask(): void {
 		let name: string = this.taskName.trim();
 		if (name.length) {
 			this.tasksService.addTask(name);
+		}
+		else {
+			this.toastService.error('Task cannot be empty');
 		}
 		this.resetInput();
 	}

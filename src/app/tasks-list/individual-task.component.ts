@@ -1,6 +1,7 @@
 import { Component, Input, Injectable } from '@angular/core';
 import { ITask } from './task';
 import { TasksService } from '../services/tasks-service';
+import { ToastsManager } from 'ng2-toastr';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { TasksService } from '../services/tasks-service';
 @Injectable()
 export class IndividualTask {
 	@Input() task: ITask;
-	constructor(private tasksService: TasksService) {}
+	constructor(private tasksService: TasksService, private toastService: ToastsManager) {}
 
 	editing: boolean = false;
 	editingName: string = '';
@@ -38,6 +39,8 @@ export class IndividualTask {
 				this.task.name = newName;
 
 				this.tasksService.updateTask(newName, this.task.id);
+			} else if(newName.length == 0) {
+				this.toastService.error('Task cannot be empty');
 			}
 			this.stopEditing();
 		}

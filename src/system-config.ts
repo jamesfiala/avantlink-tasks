@@ -38,6 +38,10 @@ barrels.forEach((barrelName: string) => {
   cliSystemConfigPackages[barrelName] = { main: 'index' };
 });
 
+cliSystemConfigPackages['ng2-toastr'] = {
+	main: 'ng2-toastr.js'
+};
+
 /** Type declaration for ambient System. */
 declare var System: any;
 
@@ -45,6 +49,7 @@ declare var System: any;
 System.config({
   map: {
     '@angular': 'vendor/@angular',
+	'ng2-toastr': 'vendor/ng2-toastr',
     'rxjs': 'vendor/rxjs',
     'main': 'main.js'
   },

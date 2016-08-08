@@ -52,3 +52,8 @@ body {
 ::-ms-clear { //IE adds an X to the end of text boxes that clears the text. This hides that
 	display: none;
 }
+
+//Overrides
+.toast-top-center {
+	top: 30px !important; //ng2-toastr puts it so it looks like it's coming from inside the titlebar
+}
