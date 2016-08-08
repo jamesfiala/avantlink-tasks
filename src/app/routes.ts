@@ -8,10 +8,8 @@ import { TasksContainer } from './tasks-list/tasks-container.component';
 
 const routes: RouterConfig = [
 	{path: '', redirectTo: '/tasks' },
-	{path: '**', redirectTo: '/tasks' },
-	{path: 'input', component: TaskInput },
-	{path: 'list', component: TasksList },
 	{path: 'tasks', component: TasksContainer},
+	{path: '**', redirectTo: '/tasks' },
 ];
 
 
