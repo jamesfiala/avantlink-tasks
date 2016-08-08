@@ -21,6 +21,32 @@ body {
 	width: 100%;
 }
 
+//Sticky Footer
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.al-page-wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -30px;
+}
+.al-page-footer, .al-footer-push {
+	height: 30px;
+}
+
+.al-page-footer {
+	background-color: gray;
+	color: white;
+	footer {
+		padding-top: 4px;
+		padding-left: 15px;
+	}
+}
+
 //media query mixins
 @mixin al-screen-small {
 	@media (max-width: 320px) {

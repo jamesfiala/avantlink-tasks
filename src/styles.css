@@ -12,6 +12,28 @@ body {
   padding-right: 15px;
   width: 100%; }
 
+* {
+  margin: 0; }
+
+html, body {
+  height: 100%; }
+
+.al-page-wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -30px; }
+
+.al-page-footer, .al-footer-push {
+  height: 30px; }
+
+.al-page-footer {
+  background-color: gray;
+  color: white; }
+  .al-page-footer footer {
+    padding-top: 4px;
+    padding-left: 15px; }
+
 ::-ms-clear {
   display: none; }
 
